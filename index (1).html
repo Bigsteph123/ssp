@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Steph Strands — Premium Nigerian Hair, Wigs &amp; Extensions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #241512;
+    --ink-2: #2F1D18;
+    --cream: #F7ECE1;
+    --fog: #B7A499;
+    --gold: #C9A227;
+    --gold-soft: #E8CD7D;
+    --wine: #7A2E3A;
+    --line: rgba(247,236,225,0.14);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--ink); color:var(--cream);
+    font-family:'Work Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ font-family:'Fraunces', serif; margin:0; }
+  .eyebrow{
+    font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--gold); display:block; margin-bottom:16px;
+  }
+  a{ color:inherit; text-decoration:none; }
+
+  /* curl divider */
+  .curl{ width:100%; height:34px; opacity:0.9; }
+  .curl path{ stroke:var(--gold); }
+
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 24px 56px; position:sticky; top:0; background:rgba(36,21,18,0.92);
+    backdrop-filter:blur(6px); z-index:20; border-bottom:1px solid var(--line);
+  }
+  .brand{ font-family:'Fraunces', serif; font-style:italic; font-weight:600; font-size:22px; }
+  .brand span{ color:var(--gold); }
+  nav .links{ display:flex; gap:34px; font-size:14px; color:var(--fog); }
+  nav .links a:hover{ color:var(--cream); }
+  .nav-cta{
+    font-size:13px; padding:10px 20px; background:var(--gold); color:var(--ink);
+    border-radius:2px; font-weight:600;
+  }
+
+  /* HERO */
+  .hero{
+    max-width:1200px; margin:0 auto; padding:110px 56px 70px;
+    display:grid; grid-template-columns: 1fr 0.85fr; gap:50px; align-items:center;
+  }
+  .hero h1{
+    font-size:56px; line-height:1.06; font-weight:600; color:var(--cream);
+  }
+  .hero h1 em{ color:var(--gold-soft); font-style:italic; }
+  .hero p.lead{
+    font-size:16px; line-height:1.7; color:var(--fog); max-width:440px; margin-top:22px;
+  }
+  .hero-actions{ display:flex; gap:14px; margin-top:34px; flex-wrap:wrap; }
+  .btn-primary{
+    background:var(--gold); color:var(--ink); border:none; padding:14px 26px;
+    border-radius:2px; font-size:14px; font-weight:600; cursor:pointer; font-family:'Work Sans',sans-serif;
+  }
+  .btn-ghost{
+    background:transparent; color:var(--cream); border:1px solid var(--line); padding:14px 26px;
+    border-radius:2px; font-size:14px; font-weight:500; cursor:pointer;
+  }
+  .hero-visual{ display:flex; align-items:center; justify-content:center; }
+
+  .strip{
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:22px 56px; display:flex; justify-content:center; gap:70px; font-size:13px; color:var(--fog);
+  }
+  .strip b{ font-family:'Fraunces',serif; color:var(--gold-soft); font-size:22px; display:block; font-weight:600; }
+
+  .section{ max-width:1160px; margin:0 auto; padding:100px 56px; }
+  .section-head{ max-width:560px; margin-bottom:52px; }
+  .section-head h2{ font-size:34px; color:var(--cream); font-weight:600; }
+  .section-head p{ color:var(--fog); font-size:15px; margin-top:14px; line-height:1.7; }
+
+  /* CATEGORIES */
+  .cat-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+  .cat-card{
+    border:1px solid var(--line); border-radius:4px; padding:32px 26px;
+    background: linear-gradient(160deg, rgba(201,162,39,0.06), transparent 60%);
+  }
+  .cat-tag{ font-family:'Space Mono',monospace; font-size:11px; color:var(--gold); letter-spacing:0.08em; text-transform:uppercase; }
+  .cat-card h3{ font-size:22px; margin-top:14px; color:var(--cream); font-weight:600; }
+  .cat-card ul{ list-style:none; padding:0; margin:18px 0 0; font-size:14px; color:var(--fog); line-height:2; }
+  .cat-price{ margin-top:20px; font-family:'Fraunces',serif; font-style:italic; color:var(--gold-soft); font-size:15px; }
+
+  /* PRODUCT GRID */
+  .product-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+  .product-card{
+    border:1px solid var(--line); border-radius:4px; overflow:hidden;
+    background: var(--ink-2);
+    transition: transform .25s ease, border-color .25s ease;
+  }
+  .product-card:hover{ transform: translateY(-4px); border-color: var(--gold); }
+  .product-photo{
+    width:100%; aspect-ratio: 3/4; object-fit:cover; display:block;
+    filter: saturate(1.02);
+  }
+  .product-body{ padding:20px 22px 24px; }
+  .product-tag{ font-family:'Space Mono',monospace; font-size:10px; color:var(--gold); letter-spacing:0.1em; text-transform:uppercase; }
+  .product-body h3{ font-size:18px; margin-top:10px; color:var(--cream); font-weight:600; }
+  .product-body p.desc{ font-size:13px; color:var(--fog); margin-top:6px; line-height:1.5; }
+  .product-price{ margin-top:14px; font-family:'Fraunces',serif; font-style:italic; color:var(--gold-soft); font-size:16px; }
+  .product-order{
+    display:inline-block; margin-top:14px; font-size:12px; color:var(--ink); background:var(--gold);
+    padding:8px 14px; border-radius:2px; font-weight:600;
+  }
+
+  /* TEXTURE GUIDE */
+  .texture-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .texture-cell{ background:var(--ink); padding:30px 24px; }
+  .texture-cell .num{ font-family:'Space Mono',monospace; font-size:11px; color:var(--gold); }
+  .texture-cell h3{ font-size:18px; margin-top:14px; color:var(--cream); font-weight:600; }
+  .texture-cell p{ font-size:13px; color:var(--fog); margin-top:8px; line-height:1.6; }
+
+  /* WHY */
+  .why-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .why-cell{ background:var(--ink); padding:34px; }
+  .why-cell h3{ font-size:16px; color:var(--cream); font-weight:600; margin-bottom:8px; }
+  .why-cell p{ font-size:14px; color:var(--fog); line-height:1.6; margin:0; }
+
+  /* CTA */
+  .cta{
+    background: linear-gradient(180deg, var(--ink-2), var(--ink));
+    text-align:center; padding:100px 56px; border-top:1px solid var(--line);
+  }
+  .cta h2{ font-size:32px; color:var(--cream); font-weight:600; }
+  .cta p{ color:var(--fog); margin-top:14px; font-size:15px; }
+  .cta-actions{ display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap; }
+  .btn-whatsapp{
+    background:#25D366; color:#0B2E17; border:none; padding:14px 26px; border-radius:2px;
+    font-size:14px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:8px;
+  }
+
+  footer{ padding:30px 56px; font-size:12px; color:var(--fog); text-align:center; border-top:1px solid var(--line); }
+
+  @media (max-width:900px){
+    .hero{ grid-template-columns:1fr; padding:70px 24px; }
+    .hero h1{ font-size:38px; }
+    .cat-grid, .why-grid, .texture-strip, .product-grid{ grid-template-columns:1fr; }
+    nav{ padding:18px 22px; }
+    nav .links{ display:none; }
+    .section{ padding:64px 24px; }
+    .strip{ flex-wrap:wrap; gap:26px; padding:24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">Steph <span>Strands</span></div>
+  <div class="links">
+    <a href="#wigs">Wigs</a>
+    <a href="#texture">Hair guide</a>
+    <a href="#why">Why us</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="nav-cta" href="#contact">Shop on WhatsApp</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <span class="eyebrow">100% Human Hair · Lagos, Nigeria</span>
+    <h1>Wigs and extensions<br>built for <em>every</em> texture.</h1>
+    <p class="lead">From bone-straight lace fronts to kinky-curly clip-ins, every bundle is sourced, tested, and matched to your natural texture before it ships.</p>
+    <div class="hero-actions">
+      <a href="#wigs"><button class="btn-primary">Shop the collection</button></a>
+      <a href="#texture"><button class="btn-ghost">Find your texture</button></a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <svg viewBox="0 0 320 380" width="280" height="340" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="strandGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#E8CD7D"/>
+          <stop offset="1" stop-color="#7A2E3A"/>
+        </linearGradient>
+      </defs>
+      <path d="M60 10 C 20 60, 100 100, 60 150 S 20 220, 70 260 S 30 330, 80 370" fill="none" stroke="url(#strandGrad)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M140 0 C 100 50, 180 90, 140 140 S 100 210, 150 250 S 110 320, 160 370" fill="none" stroke="url(#strandGrad)" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+      <path d="M220 10 C 180 60, 260 100, 220 150 S 180 220, 230 260 S 190 330, 240 370" fill="none" stroke="url(#strandGrad)" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+      <path d="M280 0 C 250 50, 300 90, 280 130 S 250 200, 290 240 S 260 300, 300 340" fill="none" stroke="url(#strandGrad)" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+    </svg>
+  </div>
+</section>
+
+<div class="strip">
+  <div><b>100%</b>human hair, no synthetic blends</div>
+  <div><b>48hr</b>Lagos delivery</div>
+  <div><b>1-on-1</b>texture matching before you order</div>
+</div>
+
+<section class="section" id="wigs">
+  <div class="section-head">
+    <span class="eyebrow">Shop the collection</span>
+    <h2>In stock now.</h2>
+    <p>Every piece below is a real photo of the actual bundle or wig you'll receive — no stock photos, no surprises.</p>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img class="product-photo" src="mini-celebrity.jpg" alt="Mini Celebrity curly wig">
+      <div class="product-body">
+        <span class="product-tag">Wigs</span>
+        <h3>Mini Celebrity</h3>
+        <p class="desc">Bouncy curly bob with soft curtain fringe. Ready to wear.</p>
+        <div class="product-price">₦28,000</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-photo" src="omotola-curls.jpg" alt="Omotola bouncy curls wig">
+      <div class="product-body">
+        <span class="product-tag">Curly Hair</span>
+        <h3>Omotola Curls</h3>
+        <p class="desc">Full pin-curl volume. Available in natural black or wine burgundy.</p>
+        <div class="product-price">₦27,500</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-photo" src="closure-pixie.jpg" alt="4x4 closure pixie wig">
+      <div class="product-body">
+        <span class="product-tag">Wigs</span>
+        <h3>4x4 Closure Pixie</h3>
+        <p class="desc">Soft crochet-curl pixie on a 4x4 closure.</p>
+        <div class="product-price">14" — ₦68,000 · 16" — ₦73,000</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-photo" src="deep-wave.jpg" alt="Deep wave hair bundle">
+      <div class="product-body">
+        <span class="product-tag">Extensions</span>
+        <h3>Deep Wave Bundle</h3>
+        <p class="desc">Dense, defined deep-wave curl pattern that holds after washing.</p>
+        <div class="product-price">₦148,000</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-photo" src="bone-straight.jpg" alt="Vietnamese raw bone straight wig">
+      <div class="product-body">
+        <span class="product-tag">Wigs</span>
+        <h3>Vietnamese Raw — Bone Straight</h3>
+        <p class="desc">Raw donor hair, silk-sleek finish, holds a blunt cut beautifully.</p>
+        <div class="product-price">10" — ₦97,000</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-photo" src="omotola-promo.jpg" alt="Omotola curls colour options">
+      <div class="product-body">
+        <span class="product-tag">Curly Hair · Promo</span>
+        <h3>Omotola Curls — Colour Edit</h3>
+        <p class="desc">Same bouncy curl, in black, deep purple, or ginger-orange.</p>
+        <div class="product-price">₦27,500 <span style="opacity:.7; font-size:13px;">promo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="texture">
+  <div class="section-head">
+    <span class="eyebrow">Find your match</span>
+    <h2>The texture guide.</h2>
+    <p>Not sure what to order? This is the same spectrum our team uses to match every customer.</p>
+  </div>
+  <div class="texture-strip">
+    <div class="texture-cell">
+      <div class="num">Type 1</div>
+      <h3>Straight</h3>
+      <p>Sleek, no curl pattern. Best for silky weaves and bone-straight lace fronts.</p>
+    </div>
+    <div class="texture-cell">
+      <div class="num">Type 2</div>
+      <h3>Wavy</h3>
+      <p>Loose S-shaped waves. Suits body wave and beach wave bundles.</p>
+    </div>
+    <div class="texture-cell">
+      <div class="num">Type 3</div>
+      <h3>Curly</h3>
+      <p>Defined spirals. Deep wave and curly closures hold shape wash after wash.</p>
+    </div>
+    <div class="texture-cell">
+      <div class="num">Type 4</div>
+      <h3>Coily</h3>
+      <p>Tight, springy coils. Kinky curly bundles blend closest to natural 4C hair.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="section-head">
+    <span class="eyebrow">Why Steph Strands</span>
+    <h2>Every bundle, checked twice.</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-cell">
+      <h3>Sourced, not mass-produced</h3>
+      <p>Hair is sourced in small batches and checked for tangling, shedding, and colour consistency before it's listed.</p>
+    </div>
+    <div class="why-cell">
+      <h3>Texture matched to you</h3>
+      <p>Send a photo on WhatsApp and get matched to the right length, density, and curl pattern before you pay.</p>
+    </div>
+    <div class="why-cell">
+      <h3>Install support included</h3>
+      <p>Every wig order comes with a short call or voice note walking you through fitting and care.</p>
+    </div>
+    <div class="why-cell">
+      <h3>Fast, tracked delivery</h3>
+      <p>48-hour delivery within Lagos, with tracking sent straight to your WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <h2>Ready to find your texture?</h2>
+  <p>Message us on WhatsApp — our assistant replies instantly and a stylist follows up personally.</p>
+  <div class="cta-actions">
+    <a href="https://wa.me/2348134812205?text=Hi%20Steph%20Strands%2C%20I%27d%20like%20to%20see%20your%20hair%20collection" target="_blank">
+      <button class="btn-whatsapp">Chat on WhatsApp →</button>
+    </a>
+  </div>
+</section>
+
+<footer>© 2026 Steph Strands. Lagos, Nigeria.</footer>
+
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<style>
+  /* Theme the n8n chat widget to match Steph Strands */
+  :root{
+    --chat--color-primary: #C9A227;
+    --chat--color-secondary: #7A2E3A;
+    --chat--message--bot--background: #2F1D18;
+    --chat--message--bot--color: #F7ECE1;
+    --chat--message--user--background: #C9A227;
+    --chat--message--user--color: #241512;
+    --chat--toggle--background: #C9A227;
+    --chat--toggle--color: #241512;
+    --chat--header--background: #241512;
+    --chat--header--color: #F7ECE1;
+    --chat--body--background: #1A100D;
+    --chat--input--background: #2F1D18;
+    --chat--input--text-color: #F7ECE1;
+  }
+</style>
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  createChat({
+    webhookUrl: 'https://ify-automates.app.n8n.cloud/webhook/41ca6999-8766-40e9-a051-093f87052a0f/chat',
+    initialMessages: [
+      'Hi 👋 welcome to Steph Strands.',
+      'Ask me about any wig, extension, or price — or tell me your hair goals and I\'ll point you the right way.'
+    ],
+    i18n: {
+      en: {
+        title: 'Steph Strands',
+        subtitle: 'Usually replies in under a minute.',
+        footer: '',
+        getStarted: 'Start chatting',
+        inputPlaceholder: 'Ask about a wig, price, or texture...',
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
